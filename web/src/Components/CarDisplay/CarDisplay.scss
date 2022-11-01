@@ -1,0 +1,24 @@
+.carDisplayContainer {
+  width: 200px;
+  padding: 15px;
+  margin: 10px;
+
+  text-align: center;
+
+  .carDisplayImage {
+    & img {
+      background-color: #000;
+      max-width: 200px;
+    }
+  }
+
+  .carDisplayModel {
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

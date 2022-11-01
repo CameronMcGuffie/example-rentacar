@@ -1,0 +1,43 @@
+.carInfoContainer {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 80vw;
+
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+
+  .carInfoContent {
+    padding: 20px;
+
+    .carInfo {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      .carInfoImage {
+        width: 30%;
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .carInfoModel {
+        font-weight: 600;
+      }
+
+      .carInfoPrice {
+      }
+
+      .carInfoDescription {
+        margin-top: 30px;
+        width: 30%;
+      }
+    }
+  }
+}
