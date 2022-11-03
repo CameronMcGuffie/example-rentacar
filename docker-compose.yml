@@ -1,30 +1,17 @@
 version: '2'
 services:
-  db:
-    image: mysql:latest
-    container_name: db
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: yHfK2Id3M2e0g
-      MYSQL_DATABASE: rentacar
-      MYSQL_USER: rentacar
-      MYSQL_PASSWORD: 2ZsaeqNeYjK8a
-    ports:
-      - "3307:3306"
   app:
     container_name: api
-    build: .
+    build: ./api
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - "./api:/app"
     ports:
       - "3001:3000"
-    depends_on:
-      - db
-    links:
-      - db
+  web:
+    container_name: web
+    build: ./web
     environment:
-      DB_USER: root
-      DB_NAME: rentacar
-      DB_PASSWORD: yHfK2Id3M2e0g
-      DB_HOST: db
+      REACT_APP_BACKEND_URL: http://127.0.0.1:3001/
+    ports:
+      - "3000:3000"

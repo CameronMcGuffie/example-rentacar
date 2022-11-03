@@ -26,12 +26,15 @@ export default function Register() {
     if (passwordRef.current.value != passwordConfirmRef.current.value)
       return throwError('Passwords do not match');
 
-    let result = await doPost('http://127.0.0.1:3000/api/v1/register', {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      username: emailRef.current.value,
-      password: passwordRef.current.value,
-    });
+    let result = await doPost(
+      `${process.env.REACT_APP_BACKEND_URL}api/v1/register`,
+      {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        username: emailRef.current.value,
+        password: passwordRef.current.value,
+      }
+    );
 
     if (result.message.includes('exists')) {
       return throwError('A user with that email already exists');

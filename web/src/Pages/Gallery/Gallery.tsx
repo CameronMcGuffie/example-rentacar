@@ -30,7 +30,9 @@ export default function Gallery() {
   }
 
   async function updateCars() {
-    let result = await doGet('http://127.0.0.1:3000/api/v1/cars/');
+    let result = await doGet(
+      `${process.env.REACT_APP_BACKEND_URL}api/v1/cars/`
+    );
     setCarData(result);
   }
 

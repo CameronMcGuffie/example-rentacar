@@ -18,15 +18,11 @@ The code doesn't take security into account as I put the full stack together in 
 
 ## How to run
 
-To run, you will need to do things manually for now.
+To run this code, you can run it in docker.
 
-1. cd to api
-2. Run `rails s`
-3. Open a new terminal and cd to web
-4. `npm install`
-5. `npm run start`
-6. Connect to your local React page (`http://localhost:3001/`)
-
-This will definitely be automated with Docker at some point.
+1. Ensure docker is installed
+2. Open a terminal in the directory
+3. Run `docker-compose build` and then `docker-compose up -d`
+4. Connect to your local React page (`http://localhost:3000/`)
 
 Note, the Ruby is quite primitive as I have not used it in a long time and have been trying to get back in context in this time.

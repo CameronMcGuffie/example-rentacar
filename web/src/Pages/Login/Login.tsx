@@ -16,10 +16,13 @@ export default function Login({ checkLogin }: LoginProps) {
   let { doPost } = useFetch();
 
   async function doLogin() {
-    let result = await doPost('http://127.0.0.1:3000/api/v1/auth/login', {
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-    });
+    let result = await doPost(
+      `${process.env.REACT_APP_BACKEND_URL}api/v1/auth/login`,
+      {
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
+      }
+    );
 
     if (result && result.token) {
       localStorage.setItem('token', result.token);

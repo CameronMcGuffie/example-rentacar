@@ -21,7 +21,9 @@ export default function CarInfo() {
 
   async function getCar() {
     let result = await doGet(
-      `http://127.0.0.1:3000/api/v1/cars/${localStorage.getItem('car_id')}`
+      `${process.env.REACT_APP_BACKEND_URL}api/v1/cars/${localStorage.getItem(
+        'car_id'
+      )}`
     );
 
     setCarInfo(result);

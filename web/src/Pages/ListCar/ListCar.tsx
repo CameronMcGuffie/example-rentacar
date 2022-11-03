@@ -34,15 +34,18 @@ export default function ListCar() {
     if (!carDescription)
       return throwError('You must specify a car description');
 
-    let result = await doPost('http://127.0.0.1:3000/api/v1/cars/', {
-      model: carModelRef.current.value,
-      year: carYearRef.current.value,
-      description: carDescription,
-      image: imageURLRef.current.value,
-      price: carPriceRef.current.value,
-      hired: false,
-      hired_by: null,
-    });
+    let result = await doPost(
+      `${process.env.REACT_APP_BACKEND_URL}api/v1/cars/`,
+      {
+        model: carModelRef.current.value,
+        year: carYearRef.current.value,
+        description: carDescription,
+        image: imageURLRef.current.value,
+        price: carPriceRef.current.value,
+        hired: false,
+        hired_by: null,
+      }
+    );
 
     console.log(result);
 
