@@ -8,13 +8,13 @@ This application allows a user to register and then list a car for hire. They ca
 
 If I were to continue with this I would do the following;
 
-- Add Docker container to wrap the code
+- ~~Add Docker container to wrap the code~~
 - Allow the user to delete a listing
 - Allow a user to hire the car
 
 ## Notes
 
-The code doesn't take security into account as I put the full stack together in a few hours, this is also why it isn't wrapped in Docker.
+The code doesn't take security into account as I put the full stack together in a few hours.
 
 ## How to run
 
